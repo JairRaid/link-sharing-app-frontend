@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-white: hsl(0 100% 100%);
+  --color-black: hsl(0 0% 0%);
+
+  --color-grey-950: hsl(0 0% 10%);
+  --color-grey-900: hsl(0 0% 20%);
+  --color-grey-500: hsl(0 0% 45%);
+  --color-grey-200: hsl(0 0% 85%);
+  --color-grey-100: hsl(0 0% 93%);
+  --color-grey-50: hsl(0 0% 90%);
+
+  --color-blue-800: hsl(227 97% 42%);
+  --color-blue-500: hsl(223 100% 59%);
+
+  --color-purple-950: hsl(252 50% 27%);
+  --color-purple-600: hsl(252 100% 62%);
+  --color-purple-300: hsl(252 100% 84%);
+
+  --color-red-550: hsl(0 84% 58%);
+  --color-red-500: hsl(0 100% 61%);
+
+  --color-pink-900: hsl(331 68% 32%);
+  --color-pink-400: hsl(13 83% 75%);
+
+  --color-orange-600: hsl(29 100% 46%);
+  --color-orange-500: hsl(11 83% 53%);
+
+  /* Typography */
+  --font-instrument:
+    "Instrument Sans", system-ui, -apple-system, "Segoe UI", BlinkMacSystemFont;
+
+  --text-32: 32px;
+  --text-24: 24px;
+  --text-16: 16px;
+  --text-12: 12px;
+
+  --leading-150: 1.5;
+
+  --tracking-0: 0;
+
+  --spacing-0: 0px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+}
+
+body {
+  @apply font-instrument;
+}

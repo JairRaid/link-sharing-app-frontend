@@ -1,0 +1,11 @@
+@reference "../../../index.css";
+
+.button--primary {
+  @apply font-semibold text-white bg-purple-600
+  py-16 rounded-8;
+}
+
+/* Active */
+.button--primary {
+  @apply my-transition active:bg-purple-300 active:shadow-input/25;
+}

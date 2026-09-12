@@ -1,0 +1,34 @@
+@reference "../../../index.css";
+
+.input-field-wrapper {
+  @apply flex flex-col gap-y-8;
+
+  .input-label {
+    @apply text-12 text-grey-900;
+  }
+  .input-container {
+    @apply relative flex items-center gap-x-16 my-transition
+    border border-grey-200 rounded-8
+    p-16;
+  }
+  .input-icon {
+    @apply shrink-0 select-none;
+  }
+  .input-element {
+    @apply text-grey-900 outline-none w-full;
+  }
+  .input-error-message {
+    @apply text-12 text-red-500
+    absolute bottom-0 right-0 translate-y-[calc(100%+.5rem)];
+  }
+
+  /* Focus */
+  .input-container:has(.input-element:focus) {
+    @apply border-purple-600 shadow-input/25;
+  }
+
+  /* Error */
+  .input-container:has(.input-error) {
+    @apply border-red-500;
+  }
+}

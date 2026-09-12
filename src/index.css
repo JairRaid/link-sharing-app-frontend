@@ -50,8 +50,39 @@
   --spacing-48: 48px;
   --spacing-56: 56px;
   --spacing-64: 64px;
+
+  /* Radius */
+  --radius-8: 8px;
+  --radius-12: 12px;
+
+  /* Shadow */
+  --shadow-input: 0 0 32px var(--color-purple-600);
 }
 
 body {
-  @apply font-instrument;
+  @apply font-instrument bg-grey-50;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+:focus-visible {
+  @apply outline-[2px] outline-grey-900 outline-offset-[2px];
+}
+
+/* Input autofill reset */
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    -webkit-text-fill-color: var(--color-grey-900) !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@utility my-transition {
+  @apply transition-all duration-200;
 }

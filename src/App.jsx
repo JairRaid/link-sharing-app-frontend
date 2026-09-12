@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router";
+import { RouterProvider } from "react-router";
 import { router } from "./routes/router";
+import AuthLayout from "./layouts/AuthLayout";
+import LoginPage from "./pages/LoginPage";
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const { user } = data || {};
-
   // useEffect(() => {
   //   const login = async () => {
   //     const url = "http://localhost:5000/api/auth/login";

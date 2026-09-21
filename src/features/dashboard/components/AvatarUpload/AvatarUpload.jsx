@@ -59,6 +59,8 @@ const AvatarUpload = ({ register, name }) => {
 
     const droppedFile = e.dataTransfer.files?.[0];
 
+    formOnChange(e);
+
     if (!droppedFile) return;
 
     const validation = validateFile(droppedFile, allowedTypes, maxSizeBytes);

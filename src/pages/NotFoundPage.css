@@ -1,0 +1,29 @@
+@reference "../index.css";
+
+.not-found-page {
+  @apply min-h-dvh flex items-center justify-center bg-grey-50 px-24 py-40;
+}
+
+.not-found-card {
+  @apply w-full max-w-[32rem] rounded-12 bg-white p-32 text-center shadow-[0_0_32px_rgba(67,41,188,0.08)] md:p-40;
+}
+
+.not-found-kicker {
+  @apply mb-16 text-14 font-semibold uppercase tracking-[0.2em] text-purple-600;
+}
+
+.not-found-title {
+  @apply text-32 font-bold text-grey-950 md:text-[2.5rem];
+}
+
+.not-found-text {
+  @apply mt-16 text-16 leading-150 text-grey-500;
+}
+
+.not-found-actions {
+  @apply mt-32 flex flex-col gap-16 md:flex-row md:justify-center;
+}
+
+.not-found-button {
+  @apply inline-flex items-center justify-center px-24 py-16 text-16 font-semibold no-underline;
+}

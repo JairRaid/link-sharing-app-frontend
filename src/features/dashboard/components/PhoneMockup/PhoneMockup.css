@@ -1,0 +1,53 @@
+@reference "../../../../index.css";
+
+.phone-mockup-section {
+  @apply bg-white hidden
+  md:inline-flex md:rounded-12 md:items-center md:justify-center
+  md:px-16 md:w-[calc(100%/1.4)];
+
+  .phone-mockup-container {
+    @apply relative select-none;
+  }
+  .phone-mockup-content {
+    @apply absolute top-0 left-1/2 -translate-x-1/2 
+    flex flex-col gap-y-16
+    w-[calc(100%-69px)] h-full max-h-[82%] translate-y-[3.9375rem];
+  }
+  .phone-mockup-header {
+    @apply flex flex-col items-center gap-y-16;
+  }
+  .user-avatar-container {
+    @apply size-[6rem] bg-grey-100 rounded-full overflow-hidden;
+  }
+  .user-info-container {
+    @apply text-center flex flex-col items-center gap-y-8;
+  }
+  .user-name {
+    @apply font-semibold text-18 text-grey-900;
+  }
+  .user-email {
+    @apply text-14 text-grey-500;
+  }
+  .link-list {
+    @apply grow flex flex-col gap-y-[1.25rem];
+  }
+  .link-item {
+    @apply grow flex items-center
+    px-16 max-h-[2.75rem] rounded-8;
+  }
+
+  /* skeleton */
+  .skeleton-name {
+    @apply bg-grey-100 rounded-full w-[160px] h-16;
+  }
+  .skeleton-email {
+    @apply bg-grey-100 w-[4.5rem] h-8;
+  }
+  .skeleton-link-list {
+    @apply flex flex-col gap-y-[1.25rem]
+    mt-[3.5rem];
+  }
+  .skeleton-link-item {
+    @apply grow w-full max-h-[2.75rem] bg-grey-100 rounded-8;
+  }
+}

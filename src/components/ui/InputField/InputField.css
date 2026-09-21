@@ -8,7 +8,7 @@
   }
   .input-container {
     @apply relative flex items-center gap-x-16 my-transition
-    border border-grey-200 rounded-8
+    border bg-white border-grey-200 rounded-8
     p-16;
   }
   .input-icon {
@@ -19,7 +19,9 @@
   }
   .input-error-message {
     @apply text-12 text-red-500
-    absolute bottom-0 right-0 translate-y-[calc(100%+.5rem)];
+    absolute bottom-0 right-0 translate-y-[calc(100%+.5rem)]
+    md:-translate-y-1/2 md:flex md:items-center 
+    md:bg-white/50 md:top-1/2 md:right-16;
   }
 
   /* Focus */

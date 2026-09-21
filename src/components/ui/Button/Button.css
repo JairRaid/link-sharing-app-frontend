@@ -5,7 +5,16 @@
   py-16 rounded-8;
 }
 
+.button--secondary {
+  @apply font-semibold text-purple-600 
+  border border-purple-600 rounded-8;
+}
+
 /* Active */
 .button--primary {
   @apply my-transition active:bg-purple-300 active:shadow-input/25;
+}
+
+.button--secondary {
+  @apply my-transition active:bg-grey-100;
 }

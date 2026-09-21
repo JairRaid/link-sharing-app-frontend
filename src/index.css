@@ -34,7 +34,9 @@
 
   --text-32: 32px;
   --text-24: 24px;
+  --text-18: 18px;
   --text-16: 16px;
+  --text-14: 14px;
   --text-12: 12px;
 
   --leading-150: 1.5;
@@ -57,6 +59,11 @@
 
   /* Shadow */
   --shadow-input: 0 0 32px var(--color-purple-600);
+  --shadow-menu: 0 0 32px black;
+
+  /* Breakpoint */
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
 }
 
 body {
@@ -68,7 +75,13 @@ button {
 }
 
 :focus-visible {
-  @apply outline-[2px] outline-grey-900 outline-offset-[2px];
+  @apply outline-2 outline-grey-900 outline-offset-2;
+}
+
+/* white filter */
+
+@utility white-filter {
+  @apply filter-[brightness(0)_saturate(100%)_invert(100%)_sepia(82%)_saturate(0%)_hue-rotate(145deg)_brightness(106%)_contrast(103%)];
 }
 
 /* Input autofill reset */
@@ -80,6 +93,31 @@ button {
     -webkit-box-shadow: 0 0 0 30px transparent inset !important;
     -webkit-text-fill-color: var(--color-grey-900) !important;
     transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 60, 255, 0.8) rgba(229, 231, 235, 0.8);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(229, 231, 235, 0.8);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(99, 60, 255, 0.8);
+    border-radius: 9999px;
+    border: 2px solid rgba(229, 231, 235, 0.8);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 60, 255, 1);
   }
 }
 

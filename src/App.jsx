@@ -1,7 +1,5 @@
 import { RouterProvider } from "react-router";
 import { router } from "./routes/router";
-import AuthLayout from "./layouts/AuthLayout";
-import LoginPage from "./pages/LoginPage";
 
 const App = () => {
   // useEffect(() => {

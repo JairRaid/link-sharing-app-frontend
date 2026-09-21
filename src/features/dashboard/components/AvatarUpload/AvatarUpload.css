@@ -1,0 +1,43 @@
+@reference "../../../../index.css";
+
+.avatar-upload {
+  @apply bg-grey-50 rounded-12 
+  flex flex-col gap-y-16
+  p-24
+  md:flex-row md:items-center md:justify-between;
+
+  .upload__label {
+    @apply text-grey-500;
+  }
+}
+
+.upload__content {
+  @apply flex flex-col gap-y-24
+  md:basis-1/2 md:min-w-[248px] md:flex-row md:items-center md:gap-x-24;
+
+  .upload__area {
+    @apply relative size-[150px] min-w-[150px] rounded-12 bg-grey-100 
+    cursor-pointer border border-dashed;
+  }
+  .upload__area:has(.upload__file-input:focus-visible) {
+    @apply outline-2 outline-grey-900 outline-offset-2;
+  }
+  .upload__empty-state {
+    @apply font-semibold text-purple-600 size-full 
+    flex flex-col justify-center items-center pointer-events-none;
+  }
+  .upload__preview-image {
+    @apply size-full object-cover rounded-12;
+  }
+  .upload__change-label {
+    @apply absolute top-0 left-0 size-full rounded-12 bg-grey-900/50 
+    opacity-0 flex flex-col justify-center items-center my-transition;
+  }
+  .upload__area:hover .upload__change-label {
+    @apply opacity-100;
+  }
+
+  .upload__hint {
+    @apply text-12 text-grey-500 max-w-[13.125rem];
+  }
+}

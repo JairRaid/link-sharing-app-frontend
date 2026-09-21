@@ -1,4 +1,4 @@
-@reference "../index.css";
+@reference "../../../index.css";
 
 .auth-layout {
   @apply min-h-dvh
@@ -12,7 +12,8 @@
     @apply font-bold text-24 text-grey-900
     md:text-32;
   }
-  p {
+  .login-description,
+  .register-description {
     @apply text-grey-500 mt-8;
   }
   form {

@@ -1,0 +1,21 @@
+@reference "../../../../index.css";
+
+.tab {
+  @apply inline-flex items-center rounded-8
+  px-24 py-16
+  md:gap-x-8;
+
+  svg {
+    @apply text-grey-500;
+  }
+
+  span {
+    @apply hidden font-semibold text-grey-500
+    md:block;
+  }
+}
+
+/* Active */
+.tab--active {
+  @apply my-transition bg-grey-100;
+}

@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
-import Button from "../components/ui/Button/Button";
-import InputField from "../components/ui/Input/InputField";
-import { loginSchema } from "../features/auth/model/schema";
+import Button from "../../../components/ui/Button/Button";
+import InputField from "../../../components/ui/InputField/InputField";
+import { loginSchema } from "../model/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Logo from "../../../components/ui/Logo";
+import apiClient from "../../../services/apiClient";
+import { useNavigate } from "react-router";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,21 +17,25 @@ const LoginPage = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const user = await apiClient.post("/api/auth/login", data); //
+
+    console.log(user);
+
+    return navigate("/links");
   };
 
   return (
     <main className="login-content">
       <header className="login-header">
-        <a href="/" aria-label="devlinks Home">
-          <img src="images/logo-devlinks.svg" alt="devlinks logo" />
-        </a>
+        <Logo />
       </header>
 
       <section aria-labelledby="login-heading" className="login-form-container">
         <h1 id="login-heading">Login</h1>
-        <p>Add your details below to get back into the app</p>
+        <p className="login-description">
+          Add your details below to get back into the app
+        </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <InputField

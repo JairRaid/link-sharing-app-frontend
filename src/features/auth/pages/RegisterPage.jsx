@@ -1,19 +1,27 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { registerSchema } from "../features/auth/model/schema";
-import InputField from "../components/ui/Input/InputField";
-import Button from "../components/ui/Button/Button";
+import { registerSchema } from "../model/schema";
+import InputField from "../../../components/ui/InputField/InputField";
+import Button from "../../../components/ui/Button/Button";
+import apiClient from "../../../services/apiClient";
+import { useNavigate } from "react-router";
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm({ resolver: zodResolver(registerSchema) });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (isSubmitting) console.log(isSubmitting);
-    console.log(data);
+
+    const user = await apiClient.post("/api/auth/register", data);
+
+    if (!user) return;
+
+    navigate("/links");
   };
 
   return (
@@ -29,7 +37,9 @@ const RegisterPage = () => {
         className="register-form-container"
       >
         <h1 id="register-heading">Create account</h1>
-        <p>Let's get you started sharing your links!</p>
+        <p className="register-description">
+          Let's get you started sharing your links!
+        </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <InputField

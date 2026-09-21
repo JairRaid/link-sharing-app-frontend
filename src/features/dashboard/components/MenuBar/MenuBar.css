@@ -1,0 +1,35 @@
+@reference "../../../../index.css";
+
+.menu-bar {
+  @apply flex items-center justify-between bg-white
+  px-24 py-16
+  md:rounded-12;
+
+  .menu-bar__logo {
+    @apply flex items-center gap-x-[.375rem];
+
+    .logo-text {
+      @apply hidden md:block;
+    }
+  }
+
+  .menu-bar__list {
+    @apply flex;
+  }
+
+  button {
+    @apply inline-flex items-center
+    p-16
+    md:px-24;
+
+    svg {
+      @apply block
+      md:hidden;
+    }
+
+    span {
+      @apply hidden
+        md:block;
+    }
+  }
+}

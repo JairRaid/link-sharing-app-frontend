@@ -5,7 +5,7 @@ import { loginSchema } from "../model/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Logo from "../../../components/ui/Logo";
 import apiClient from "../../../services/apiClient";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -72,9 +72,9 @@ const LoginPage = () => {
 
         <p className="login-signup-text">
           Don't have an account?&nbsp;
-          <a href="/register" className="create-account-link">
+          <Link to="/register" className="create-account-link">
             Create account
-          </a>
+          </Link>
         </p>
       </section>
     </main>

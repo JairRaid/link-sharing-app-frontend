@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import Button from "../../../../components/ui/Button/Button";
 import Tab from "../Tab/Tab";
 import "./MenuBar.css";
@@ -15,10 +15,10 @@ const MenuBar = () => {
 
   return (
     <header className="menu-bar">
-      <a href="/" aria-label="devlinks Home" className="menu-bar__logo">
+      <Link href="/" aria-label="devlinks Home" className="menu-bar__logo">
         <img src="images/logo-devlinks-icon.svg" alt="" className="icon" />
         <img src="images/logo-devlinks-text.svg" alt="" className="logo-text" />
-      </a>
+      </Link>
 
       <ul className="menu-bar__list">
         <li className="menu-bar__item">

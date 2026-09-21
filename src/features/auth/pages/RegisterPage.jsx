@@ -4,7 +4,7 @@ import { registerSchema } from "../model/schema";
 import InputField from "../../../components/ui/InputField/InputField";
 import Button from "../../../components/ui/Button/Button";
 import apiClient from "../../../services/apiClient";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -89,9 +89,9 @@ const RegisterPage = () => {
 
         <p className="login-signup-text">
           Already have an account?&nbsp;
-          <a href="/login" className="login-account-link">
+          <Link href="/login" className="login-account-link">
             Login
-          </a>
+          </Link>
         </p>
       </section>
     </main>

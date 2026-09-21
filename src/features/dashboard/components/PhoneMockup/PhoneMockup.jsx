@@ -24,7 +24,11 @@ const PhoneMockup = () => {
               className={`user-avatar-container ${profile?.profilePicture ? "border-4 border-purple-600" : ""}`}
             >
               {profile?.profilePicture && (
-                <img src={profile.profilePicture} alt="" />
+                <img
+                  src={profile.profilePicture}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               )}
             </div>
             <div className="user-info-container">

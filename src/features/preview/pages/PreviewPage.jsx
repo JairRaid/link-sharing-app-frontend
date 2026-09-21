@@ -26,7 +26,7 @@ const PreviewPage = () => {
     }
 
     const clientBaseUrl = window.location.origin;
-    const githubUrl = "/link-sharing-app-frontend/#";
+    // const githubUrl = "/link-sharing-app-frontend/#";
 
     await navigator.clipboard.writeText(
       `${clientBaseUrl}${import.meta.env.BASE_URL}#/public/profile/${profile.id}`,

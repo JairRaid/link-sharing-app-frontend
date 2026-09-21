@@ -7,7 +7,7 @@ const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
 
 const maxSizeBytes = 5 * 1024 * 1024;
 
-const AvatarUpload = ({ register, name }) => {
+const AvatarUpload = ({ register, name, setImageFile }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef(null);
@@ -39,6 +39,7 @@ const AvatarUpload = ({ register, name }) => {
 
     const { file } = validation;
 
+    setImageFile(file);
     setSelectedImage(URL.createObjectURL(file));
   };
 
@@ -69,6 +70,7 @@ const AvatarUpload = ({ register, name }) => {
 
     const { file } = validation;
 
+    setImageFile(file);
     setSelectedImage(URL.createObjectURL(file));
   };
 

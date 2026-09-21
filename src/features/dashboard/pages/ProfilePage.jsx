@@ -4,12 +4,13 @@ import { useForm } from "react-hook-form";
 import Button from "../../../components/ui/Button/Button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { profileSchema } from "../model/schema";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import apiClient from "../../../services/apiClient";
 import { useProfileStore } from "../store/useProfileStore";
 
 const ProfilePage = () => {
   const setProfile = useProfileStore((state) => state.setProfile);
+  const [imageFile, setImageFile] = useState(null);
 
   const {
     register,
@@ -31,8 +32,10 @@ const ProfilePage = () => {
     formData.append("firstName", getValues("firstName"));
     formData.append("lastName", getValues("lastName"));
 
-    if (getValues("profilePicture")?.[0])
-      formData.append("profilePicture", getValues("profilePicture")?.[0]);
+    // if (getValues("profilePicture")?.[0])
+    //   formData.append("profilePicture", getValues("profilePicture")?.[0]);
+
+    if (imageFile) formData.append("profilePicture", imageFile);
 
     const newProfile = await apiClient.patch("/api/user/profile", formData);
 
@@ -77,7 +80,11 @@ const ProfilePage = () => {
       </header>
 
       <section className="profile-section">
-        <AvatarUpload name="profilePicture" register={register} />
+        <AvatarUpload
+          name="profilePicture"
+          register={register}
+          setImageFile={setImageFile}
+        />
 
         <section className="profile-fields">
           <InputField

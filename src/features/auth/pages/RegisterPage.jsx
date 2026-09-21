@@ -27,9 +27,9 @@ const RegisterPage = () => {
   return (
     <main className="register-content">
       <header className="register-header">
-        <a href="/" aria-label="devlinks Home">
+        <Link to="/" aria-label="devlinks Home">
           <img src="images/logo-devlinks.svg" alt="devlinks logo" />
-        </a>
+        </Link>
       </header>
 
       <section
@@ -89,7 +89,7 @@ const RegisterPage = () => {
 
         <p className="login-signup-text">
           Already have an account?&nbsp;
-          <Link href="/login" className="login-account-link">
+          <Link to="/login" className="login-account-link">
             Login
           </Link>
         </p>

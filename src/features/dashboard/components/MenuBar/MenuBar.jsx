@@ -15,7 +15,7 @@ const MenuBar = () => {
 
   return (
     <header className="menu-bar">
-      <Link href="/" aria-label="devlinks Home" className="menu-bar__logo">
+      <Link to="/" aria-label="devlinks Home" className="menu-bar__logo">
         <img src="images/logo-devlinks-icon.svg" alt="" className="icon" />
         <img src="images/logo-devlinks-text.svg" alt="" className="logo-text" />
       </Link>

@@ -29,7 +29,7 @@ const PreviewPage = () => {
     const githubUrl = "/link-sharing-app-frontend/#";
 
     await navigator.clipboard.writeText(
-      `${clientBaseUrl}${githubUrl}/public/profile/${profile.id}`,
+      `${clientBaseUrl}${import.meta.env.BASE_URL}#/public/profile/${profile.id}`,
     );
 
     setIsCopied(true);

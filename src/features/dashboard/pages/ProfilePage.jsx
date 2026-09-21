@@ -25,7 +25,6 @@ const ProfilePage = () => {
     const isValidProfile = await trigger();
 
     if (!isValidProfile) return console.log(errors);
-    console.log("data valid");
 
     const formData = new FormData();
 

@@ -1,8 +1,10 @@
+const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const PLATFORMS = {
   GITHUB: {
     id: "github",
     label: "Github",
-    icon: "/images/platform/icon-github.svg",
+    icon: assetUrl("images/platform/icon-github.svg"),
     bgColor: "#1A1A1A",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.github.com/john-doe",
@@ -12,7 +14,7 @@ export const PLATFORMS = {
   FRONTEND_MENTOR: {
     id: "frontend_mentor",
     label: "Frontend Mentor",
-    icon: "/images/platform/icon-frontend-mentor.svg",
+    icon: assetUrl("images/platform/icon-frontend-mentor.svg"),
     bgColor: "#FFFFFF",
     textColor: "#0E0E0E",
     placeholder: "e.g. https://www.frontendmentor.io/profile/john-doe",
@@ -23,7 +25,7 @@ export const PLATFORMS = {
   TWITTER: {
     id: "twitter",
     label: "Twitter / X",
-    icon: "/images/platform/icon-twitter.svg",
+    icon: assetUrl("images/platform/icon-twitter.svg"),
     bgColor: "#43B7E9",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.twitter.com/john_doe",
@@ -33,7 +35,7 @@ export const PLATFORMS = {
   LINKEDIN: {
     id: "linkedin",
     label: "LinkedIn",
-    icon: "/images/platform/icon-linkedin.svg",
+    icon: assetUrl("images/platform/icon-linkedin.svg"),
     bgColor: "#2D68C4",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.linkedin.com/in/john-doe",
@@ -43,7 +45,7 @@ export const PLATFORMS = {
   YOUTUBE: {
     id: "youtube",
     label: "YouTube",
-    icon: "/images/platform/icon-youtube.svg",
+    icon: assetUrl("images/platform/icon-youtube.svg"),
     bgColor: "#EE3939",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.youtube.com/@john-doe",
@@ -54,7 +56,7 @@ export const PLATFORMS = {
   FACEBOOK: {
     id: "facebook",
     label: "Facebook",
-    icon: "/images/platform/icon-facebook.svg",
+    icon: assetUrl("images/platform/icon-facebook.svg"),
     bgColor: "#2442AC",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.facebook.com/@john-doe",
@@ -65,7 +67,7 @@ export const PLATFORMS = {
   TWITCH: {
     id: "twitch",
     label: "Twitch",
-    icon: "/images/platform/icon-twitch.svg",
+    icon: assetUrl("images/platform/icon-twitch.svg"),
     bgColor: "#EE3FC8",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.twitch.com/@john-doe",
@@ -76,7 +78,7 @@ export const PLATFORMS = {
   DEVTO: {
     id: "devto",
     label: "Dev.to",
-    icon: "/images/platform/icon-devto.svg",
+    icon: assetUrl("images/platform/icon-devto.svg"),
     bgColor: "#333333",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://dev.to/john-doe",
@@ -86,7 +88,7 @@ export const PLATFORMS = {
   CODEWARS: {
     id: "codewars",
     label: "Codewars",
-    icon: "/images/platform/icon-codewars.svg",
+    icon: assetUrl("images/platform/icon-codewars.svg"),
     bgColor: "#8A1A50",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.codewars.com/users/john-doe",
@@ -96,7 +98,7 @@ export const PLATFORMS = {
   CODEPEN: {
     id: "codepen",
     label: "CodePen",
-    icon: "/images/platform/icon-codepen.svg",
+    icon: assetUrl("images/platform/icon-codepen.svg"),
     bgColor: "#47CF73",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://codepen.io/john-doe",
@@ -106,7 +108,7 @@ export const PLATFORMS = {
   FREECODECAMP: {
     id: "freecodecamp",
     label: "freeCodeCamp",
-    icon: "/images/platform/icon-freecodecamp.svg",
+    icon: assetUrl("images/platform/icon-freecodecamp.svg"),
     bgColor: "#30226B",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://www.freecodecamp.org/john-doe",
@@ -116,7 +118,7 @@ export const PLATFORMS = {
   GITLAB: {
     id: "gitlab",
     label: "GitLab",
-    icon: "/images/platform/icon-gitlab.svg",
+    icon: assetUrl("images/platform/icon-gitlab.svg"),
     bgColor: "#EB4925",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://gitlab.com/john-doe",
@@ -126,7 +128,7 @@ export const PLATFORMS = {
   HASHNODE: {
     id: "hashnode",
     label: "Hashnode",
-    icon: "/images/platform/icon-hashnode.svg",
+    icon: assetUrl("images/platform/icon-hashnode.svg"),
     bgColor: "#2962FF",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://hashnode.com/@john-doe",
@@ -136,7 +138,7 @@ export const PLATFORMS = {
   STACK_OVERFLOW: {
     id: "stack_overflow",
     label: "Stack Overflow",
-    icon: "/images/platform/icon-stack-overflow.svg",
+    icon: assetUrl("images/platform/icon-stack-overflow.svg"),
     bgColor: "#EC7100",
     textColor: "#FFFFFF",
     placeholder: "e.g. https://stackoverflow.com/users/123456/john-doe",

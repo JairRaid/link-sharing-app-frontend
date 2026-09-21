@@ -122,7 +122,12 @@ const LinksPage = () => {
                 register={register}
                 isError={errors?.links?.[index]?.url ? true : false}
                 errorMsg={errors?.links?.[index]?.url?.message}
-                imgElement={<img src="./images/icon-link.svg" alt="" />}
+                imgElement={
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/icon-link.svg`}
+                    alt=""
+                  />
+                }
               />
             </article>
           ))}

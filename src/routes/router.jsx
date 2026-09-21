@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import { createHashRouter, Navigate } from "react-router";
 import AuthLayout from "../features/auth/layouts/AuthLayout";
 import LoginPage from "../features/auth/pages/LoginPage";
 import RegisterPage from "../features/auth/pages/RegisterPage";
@@ -13,7 +13,7 @@ import PublicProfile from "../features/PublicProfile/PublicProfile";
 import PreviewPage from "../features/preview/pages/PreviewPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     loader: verifySession,

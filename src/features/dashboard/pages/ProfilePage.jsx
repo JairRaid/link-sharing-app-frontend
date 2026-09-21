@@ -39,8 +39,6 @@ const ProfilePage = () => {
 
     const newProfile = await apiClient.patch("/api/user/profile", formData);
 
-    console.log(newProfile);
-
     setProfile(newProfile);
 
     reset({

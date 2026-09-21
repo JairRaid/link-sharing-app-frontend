@@ -3,6 +3,7 @@ import { formatLabel } from "../../../utils/formatter";
 import { useUserProfile } from "../../dashboard/hooks/useUserProfile";
 import "./PreviewPage.css";
 import { formatPreviewLinks } from "../../../utils/phonepreview";
+import { Link } from "react-router";
 
 const PreviewPage = () => {
   const { links, profile } = useUserProfile();
@@ -47,9 +48,12 @@ const PreviewPage = () => {
             className="profile-card__navigation"
             aria-label="Profile actions"
           >
-            <a href="/links" className="profile-card__button button--secondary">
+            <Link
+              to="/links"
+              className="profile-card__button button--secondary"
+            >
               Back to Editor
-            </a>
+            </Link>
 
             <button
               type="button"

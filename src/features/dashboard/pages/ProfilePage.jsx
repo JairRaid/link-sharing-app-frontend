@@ -107,7 +107,7 @@ const ProfilePage = () => {
             isError={errors.email ? true : false}
             errorMsg={errors.email ? errors.email.message : ""}
             register={register}
-            disabled
+            autocomplete="email"
           />
         </section>
       </section>

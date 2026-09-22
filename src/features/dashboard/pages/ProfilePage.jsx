@@ -7,6 +7,7 @@ import { profileSchema } from "../model/schema";
 import { useEffect, useState } from "react";
 import apiClient from "../../../services/apiClient";
 import { useProfileStore } from "../store/useProfileStore";
+import toast from "react-hot-toast";
 
 const ProfilePage = () => {
   const setProfile = useProfileStore((state) => state.setProfile);
@@ -15,29 +16,24 @@ const ProfilePage = () => {
   const {
     register,
     getValues,
-    trigger,
+    handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(profileSchema),
   });
 
   const handleSave = async () => {
-    const isValidProfile = await trigger();
-
-    if (!isValidProfile) return console.log(errors);
-
     const formData = new FormData();
 
     formData.append("firstName", getValues("firstName"));
     formData.append("lastName", getValues("lastName"));
 
-    // if (getValues("profilePicture")?.[0])
-    //   formData.append("profilePicture", getValues("profilePicture")?.[0]);
-
     if (imageFile) formData.append("profilePicture", imageFile);
 
     const newProfile = await apiClient.patch("/api/user/profile", formData);
+
+    toast.success("Profile saved successfully!");
 
     setProfile(newProfile);
 
@@ -122,8 +118,9 @@ const ProfilePage = () => {
         <Button
           type="button"
           text="Save"
-          onClick={handleSave}
+          onClick={handleSubmit(handleSave)}
           className="button button--primary button-save"
+          disabled={isSubmitting}
         />
       </footer>
     </section>

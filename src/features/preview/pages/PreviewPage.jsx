@@ -131,7 +131,7 @@ const PreviewPage = () => {
                   />
                   {formatLabel(link.platform)}
                   <img
-                    src="/images/icon-arrow-right.svg"
+                    src={`${import.meta.env.BASE_URL}/images/icon-arrow-right.svg`}
                     alt=""
                     className={`ml-auto ${link.platform === "frontend_mentor" && "filter-[brightness(0)_saturate(100%)_invert(44%)_sepia(8%)_saturate(15%)_hue-rotate(342deg)_brightness(99%)_contrast(95%)]"}`}
                   />

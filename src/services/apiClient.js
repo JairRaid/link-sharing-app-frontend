@@ -1,4 +1,6 @@
-const API_BASE_URL = "https://link-sharing-app-backend.vercel.app";
+import toast from "react-hot-toast";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const getResponseData = async (response) => {
   const contentType = response.headers.get("content-type") || "";
@@ -34,13 +36,29 @@ export const apiClient = {
       }
     }
 
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+    let response;
+
+    try {
+      response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+    } catch (error) {
+      // navigator is online but unable to reach server
+      const message = navigator.onLine
+        ? "Unable to reach the server. Please try again."
+        : "You are offline. Please check your internet connection.";
+      const networkError = new Error(message, { cause: error });
+
+      networkError.status = 0;
+      toast.error(networkError.message);
+      throw networkError;
+    }
+
     const data = await getResponseData(response);
 
     if (!response.ok) {
       const error = new Error(data?.message || "Request failed");
       error.status = response.status;
       error.data = data;
+      toast.error(error.message);
       throw error;
     }
 

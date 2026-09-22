@@ -23,8 +23,8 @@
 
   .profile-card__content {
     @apply inline-flex flex-col items-center gap-y-56 text-center bg-white
-    mt-[3.125rem] mx-auto px-56
-    md:mt-[7rem] md:py-[3rem] md:rounded-[1.5rem] md:shadow-menu/10
+    mt-[3.125rem] mx-auto w-full max-w-[15rem]
+    md:mt-[7rem] md:px-56 md:py-[3rem] md:rounded-[1.5rem] md:shadow-menu/10
     md:min-w-[21.875rem];
   }
   .profile-card__identity {

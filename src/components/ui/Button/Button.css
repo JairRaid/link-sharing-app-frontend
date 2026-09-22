@@ -18,3 +18,9 @@
 .button--secondary {
   @apply my-transition active:bg-grey-100;
 }
+
+/* Disabled */
+.button--primary,
+.button--secondary {
+  @apply disabled:opacity-25;
+}

@@ -5,6 +5,7 @@ import InputField from "../../../components/ui/InputField/InputField";
 import Button from "../../../components/ui/Button/Button";
 import apiClient from "../../../services/apiClient";
 import { Link, useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -15,11 +16,9 @@ const RegisterPage = () => {
   } = useForm({ resolver: zodResolver(registerSchema) });
 
   const onSubmit = async (data) => {
-    if (isSubmitting) console.log(isSubmitting);
+    await apiClient.post("/api/auth/register", data);
 
-    const user = await apiClient.post("/api/auth/register", data);
-
-    if (!user) return;
+    toast.success("Account created successfully!");
 
     navigate("/links");
   };
@@ -83,6 +82,7 @@ const RegisterPage = () => {
           <Button
             text="Create new account"
             type="submit"
+            disabled={isSubmitting}
             className="button button--primary"
           />
         </form>

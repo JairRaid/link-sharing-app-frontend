@@ -6,21 +6,22 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Logo from "../../../components/ui/Logo";
 import apiClient from "../../../services/apiClient";
 import { Link, useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
 
   const onSubmit = async (data) => {
-    const user = await apiClient.post("/api/auth/login", data); //
+    await apiClient.post("/api/auth/login", data);
 
-    console.log(user);
+    toast.success("Logged in successfully!");
 
     return navigate("/links");
   };
@@ -66,6 +67,7 @@ const LoginPage = () => {
           <Button
             text="Login"
             type="submit"
+            disabled={isSubmitting}
             className="button button--primary"
           />
         </form>

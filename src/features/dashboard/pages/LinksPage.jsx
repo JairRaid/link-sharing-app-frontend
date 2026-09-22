@@ -7,17 +7,18 @@ import apiClient from "../../../services/apiClient";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { linksSchema } from "../model/schema";
 import { useLinksStore } from "../store/useLinksStore";
+import toast from "react-hot-toast";
 
 const LinksPage = () => {
   const setLinks = useLinksStore((state) => state.setLinks);
 
   const {
     register,
-    trigger,
     getValues,
+    handleSubmit,
     control,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(linksSchema),
     defaultValues: { links: [] },
@@ -29,15 +30,15 @@ const LinksPage = () => {
   });
 
   const handleSave = async () => {
-    const isValidLinks = await trigger();
+    const linksToSend = getValues("links");
 
-    if (!isValidLinks) return; // Toast notification
+    const nextLinks = await apiClient.put("/api/links/", linksToSend);
 
-    const linksData = await apiClient.put("/api/links/", getValues("links"));
+    toast.success("Links saved successfully!");
 
-    if (Array.isArray(linksData.links)) reset({ links: linksData.links });
+    if (Array.isArray(nextLinks.links)) reset({ links: nextLinks.links });
 
-    setLinks(linksData.links);
+    setLinks(nextLinks.links);
   };
 
   const handleRemove = (indexToRemove) => {
@@ -162,7 +163,8 @@ const LinksPage = () => {
           type="button"
           text="Save"
           className="button button--primary button-save"
-          onClick={handleSave}
+          onClick={handleSubmit(handleSave)}
+          disabled={isSubmitting}
         />
       </footer>
     </section>

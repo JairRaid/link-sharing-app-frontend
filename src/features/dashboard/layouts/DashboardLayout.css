@@ -104,7 +104,7 @@
 
 .links-container {
   @apply flex flex-col gap-y-24 mt-24
-  md:min-h-[22rem];
+  md:min-h-[22rem] md:max-h-[22rem];
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;

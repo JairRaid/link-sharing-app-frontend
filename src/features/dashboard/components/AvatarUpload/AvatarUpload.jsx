@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./AvatarUpload.css";
 import { validateFile } from "../../../../utils/validation";
 import { useProfileStore } from "../../store/useProfileStore";
+import toast from "react-hot-toast";
 
 const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
 
@@ -35,7 +36,10 @@ const AvatarUpload = ({ register, name, setImageFile }) => {
 
     const validation = validateFile(selectedFile, allowedTypes, maxSizeBytes);
 
-    if (!validation.isValidFile) return;
+    if (!validation.isValidFile) {
+      toast.error(validation.message);
+      return;
+    }
 
     const { file } = validation;
 

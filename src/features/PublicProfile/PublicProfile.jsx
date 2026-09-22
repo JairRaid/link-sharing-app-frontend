@@ -64,7 +64,7 @@ const PublicProfile = () => {
                 >
                   <img
                     src={link.icon}
-                    className={`${link.platform !== "frontend_mentor" && "filter-[brightness(0)_saturate(100%)_invert(100%)_sepia(82%)_saturate(0%)_hue-rotate(145deg)_brightness(106%)_contrast(103%)]"}`}
+                    className={`${link.platform !== "frontend_mentor" && "white-filter"}`}
                     alt=""
                   />
                   {formatLabel(link.platform)}

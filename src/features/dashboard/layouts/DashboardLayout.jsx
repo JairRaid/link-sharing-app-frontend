@@ -12,7 +12,9 @@ const DashboardLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className={`dashboard-layout`}>
+    <div
+      className={`dashboard-layout ${activeTab === "profile" ? "h-auto" : "h-dvh"}`}
+    >
       <MenuBar />
 
       <main className="dashboard-layout__main">

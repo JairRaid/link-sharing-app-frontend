@@ -32,30 +32,30 @@
   --font-instrument:
     "Instrument Sans", system-ui, -apple-system, "Segoe UI", BlinkMacSystemFont;
 
-  --text-32: 32px;
-  --text-24: 24px;
-  --text-18: 18px;
-  --text-16: 16px;
-  --text-14: 14px;
-  --text-12: 12px;
+  --text-32: 2rem;
+  --text-24: 1.5rem;
+  --text-18: 1.125rem;
+  --text-16: 1rem;
+  --text-14: 0.875rem;
+  --text-12: 0.75rem;
 
   --leading-150: 1.5;
 
   --tracking-0: 0;
 
-  --spacing-0: 0px;
-  --spacing-8: 8px;
-  --spacing-16: 16px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-56: 56px;
-  --spacing-64: 64px;
+  --spacing-0: 0;
+  --spacing-8: 0.5rem;
+  --spacing-16: 1rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
 
   /* Radius */
-  --radius-8: 8px;
-  --radius-12: 12px;
+  --radius-8: 0.5rem;
+  --radius-12: 0.75rem;
 
   /* Shadow */
   --shadow-input: 0 0 32px var(--color-purple-600);
